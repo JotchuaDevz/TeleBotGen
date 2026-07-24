@@ -71,7 +71,7 @@ gerar_key() {
 
     fun_list "$valuekey"
 
-    keyfinal="${LIST}/$(ofus "${IP}:8888/${valuekey}/${LIST}")"
+    keyfinal="${LIST}/$(ofus "${IP}:8888/${valuekey}")"
 
     local bot_retorno="$LINE\n"
 
