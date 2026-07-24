@@ -181,7 +181,6 @@ EOF
                     MENSAJE+="🔑 KEY: ${_key}%0A"
                     MENSAJE+="🌐 IP: ${USRIP}%0A"
                     MENSAJE+="⏰ FECHA: ${USED_TIME}%0A"
-                    MENSAJE+="💰 API/KEY: ${RESELL}%0A"
                     MENSAJE+="===============================%0A"
                     MENSAJE+="⚡ HexGen by JotchuaDevz"
 

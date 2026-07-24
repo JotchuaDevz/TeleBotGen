@@ -151,9 +151,11 @@ instalar_servicios() {
         wget -q -O "/usr/local/bin/hexgen-http-server" \
             "https://raw.githubusercontent.com/JotchuaDevz/TeleBotGen/master/http-server.sh"
 
-        if [[ -s "/usr/local/bin/hexgen-http-server" ]]; then
-            chmod +x "/usr/local/bin/hexgen-http-server"
-        else
+      if [[ -s "/usr/local/bin/hexgen-http-server" ]]; then
+    chmod +x "/usr/local/bin/hexgen-http-server"
+    sed -i 's|PROGRAMA="/bin/http-server.sh"|PROGRAMA="/usr/local/bin/hexgen-http-server"|' \
+        "/usr/local/bin/hexgen-http-server"
+else
             rm -f "/usr/local/bin/hexgen-http-server"
         fi
     fi

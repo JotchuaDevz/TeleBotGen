@@ -7,7 +7,7 @@
 #	DESENVOLVIDO POR:	Juliano Santos [SHAMAN]
 #	PÁGINA:				http://www.shellscriptx.blogspot.com.br
 #	FANPAGE:			https://www.facebook.com/shellscriptx
-#	GITHUB:				https://github.com/shellscriptx
+#	GITHUB:				https://github.com/shellscript
 # 	CONTATO:			shellscriptx@gmail.com
 #
 #	DESCRIÇÃO:			ShellBot é uma API não-oficial desenvolvida para facilitar a criação de 
