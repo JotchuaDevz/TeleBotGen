@@ -1,0 +1,12 @@
+#!/bin/bash
+
+reboot_src () {
+bot_retorno="$LINE\n"
+          bot_retorno+="Reiniciando servidor VPS\n"
+          bot_retorno+="$LINE\n"
+msj_fun
+sleep 2
+# BUG FIX: estaba comentado, el menu anunciaba /reboot como funcional
+# pero no hacia nada. Se ejecuta con delay para que el mensaje alcance a salir.
+nohup bash -c "sleep 3 && reboot" >/dev/null 2>&1 &
+}

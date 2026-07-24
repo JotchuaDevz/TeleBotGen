@@ -1,0 +1,9 @@
+#!/bin/bash
+
+link_src () {
+	bot_retorno="$LINE\n"
+	bot_retorno+="⚙️ <b>Comando de instalación:</b>\n"
+	bot_retorno+="<code>sudo apt update -y; apt upgrade -y; wget -qO install.sh https://raw.githubusercontent.com/JotchuaDevz/Porno-OS/refs/heads/main/install.sh; chmod +x install.sh; ./install.sh</code>\n"
+	bot_retorno+="$LINE\n"
+msj_fun
+}

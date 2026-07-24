@@ -1,0 +1,40 @@
+#!/bin/bash
+
+cache_src () {
+
+#MEMORIA RAM
+unset ram1
+unset ram2
+unset ram3
+unset _usor
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+ram1=$(free -h | grep -i mem | awk {'print $2'})
+ram2=$(free -h | grep -i mem | awk {'print $4'})
+ram3=$(free -h | grep -i mem | awk {'print $3'})
+	  bot_retorno="🔸 <b>ANTES DE LIMPIAR</b> 🔸\n"
+	  bot_retorno+="$LINE\n"
+	  bot_retorno+="💾 Total: <b>$ram1</b> | En uso: <b>$_usor</b>\n"
+	  bot_retorno+="📈 Usada: <b>$ram3</b> | 📉 Libre: <b>$ram2</b>\n"
+	  bot_retorno+="$LINE\n"
+msj_fun
+
+sleep 2
+
+sudo sync
+sudo sysctl -w vm.drop_caches=3 > /dev/null 2>&1
+
+unset ram1
+unset ram2
+unset ram3
+unset _usor
+_usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+ram1=$(free -h | grep -i mem | awk {'print $2'})
+ram2=$(free -h | grep -i mem | awk {'print $4'})
+ram3=$(free -h | grep -i mem | awk {'print $3'})
+	  bot_retorno="✅ <b>DESPUÉS DE LIMPIAR</b> ✅\n"
+	  bot_retorno+="$LINE\n"
+	  bot_retorno+="💾 Total: <b>$ram1</b> | En uso: <b>$_usor</b>\n"
+	  bot_retorno+="📈 Usada: <b>$ram3</b> | 📉 Libre: <b>$ram2</b>\n"
+	  bot_retorno+="$LINE\n"
+msj_fun
+}
